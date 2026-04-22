@@ -269,7 +269,7 @@ class _DayCard extends StatelessWidget {
                   style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
                 title: Text(item.aktivitas),
-                subtitle: Text('${item.waktuMulai} – ${item.waktuSelesai}'),
+                subtitle: Text('until ${item.waktuSelesai}'),
               ),
             )
             .toList(),

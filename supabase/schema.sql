@@ -88,6 +88,7 @@ create table if not exists public.trip_plans (
   user_id     uuid not null references public.profiles(id) on delete cascade,
   destination text not null,
   start_date  date,
+  -- Max 7 days: keeps token usage within Gemini free-tier limits per request.
   days        integer not null default 1 check (days between 1 and 7),
   prompt      jsonb not null default '{}'::jsonb,
   response    jsonb not null default '{}'::jsonb,

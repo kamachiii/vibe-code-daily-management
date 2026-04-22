@@ -39,7 +39,7 @@ class RecurrenceService {
           : null;
 
       return ScheduleItem(
-        id: '', // will be assigned by DB
+        id: '', // placeholder; must be persisted via SchedulesRepository before use
         userId: rule.userId,
         ruleId: rule.id,
         title: rule.title,

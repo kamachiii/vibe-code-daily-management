@@ -124,8 +124,10 @@ serve(async (req) => {
       },
     });
   } catch (err) {
+    // Avoid exposing internal stack traces to callers.
+    const message = err instanceof Error ? err.message : 'Internal server error';
     return new Response(
-      JSON.stringify({ error: String(err) }),
+      JSON.stringify({ error: message }),
       { status: 500, headers: { 'Content-Type': 'application/json' } },
     );
   }
